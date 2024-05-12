@@ -1,6 +1,6 @@
-#include "TimerView.h"
+#include "models/TimerModel.h"
+#include "views/TimerView.h"
 #include "Delegate.h"
-#include "TimerModel.h"
 
 #include <QApplication>
 

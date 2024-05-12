@@ -1,6 +1,6 @@
 #include "Delegate.h"
-#include "TimerView.h"
-#include "TimerModel.h"
+#include "views/TimerView.h"
+#include "models/TimerModel.h"
 
 Delegate* Delegate::m_delegate = 0;
 Delegate::Delegate() {

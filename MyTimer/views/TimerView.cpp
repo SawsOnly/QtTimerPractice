@@ -1,5 +1,5 @@
 #include "TimerView.h"
-#include "ui_timerview.h"
+#include "views/ui_timerview.h"
 
 TimerView::TimerView(QWidget *parent)
     : QDockWidget(parent)

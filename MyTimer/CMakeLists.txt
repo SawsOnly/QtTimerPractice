@@ -14,17 +14,17 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        views/*
+        models/*
+        ui/*
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(MyTimer
         MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-        TimerModel.h TimerModel.cpp
-        TimerView.h TimerView.cpp timerview.ui
+        main.cpp
+        models/TimerModel.h models/TimeModel.cpp
+        views/TimerView.h views/TimerView.cpp views/timerview.ui
         Delegate.h Delegate.cpp
     )
 # Define target properties for Android with Qt 6 as:
