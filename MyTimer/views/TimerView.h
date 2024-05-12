@@ -23,6 +23,7 @@ public:
 public slots:
     void timerButtonClicked();
     void changeTimerButton(bool started);
+    void updateTimer(QString time);
 
 signals:
     void receiveTimerText(QString text);

@@ -6,6 +6,7 @@ TimerView::TimerView(QWidget *parent)
     , ui(new Ui::TimerView)
 {
     ui->setupUi(this);
+    ui->TimerText->setAlignment(Qt::AlignmentFlag::AlignCenter | Qt::AlignmentFlag::AlignAbsolute);
     QObject::connect(ui->TimerStartButton, &QPushButton::clicked, this, &TimerView::timerButtonClicked);
 }
 
@@ -32,10 +33,17 @@ void TimerView::timerButtonClicked()
 
 void TimerView::changeTimerButton(bool started)
 {
+    //Timer text should not be editable by user when button has started
+    ui->TimerText->setDisabled(started);
     if(started)
     {
         ui->TimerStartButton->setText("Stop");
         return;
     }
     ui->TimerStartButton->setText("Start");
+}
+
+void TimerView::updateTimer(QString time)
+{
+    ui->TimerText->setText(time);
 }
