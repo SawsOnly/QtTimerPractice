@@ -7,6 +7,7 @@ TimerView::TimerView(QWidget *parent)
 {
     ui->setupUi(this);
     ui->TimerText->setAlignment(Qt::AlignmentFlag::AlignCenter | Qt::AlignmentFlag::AlignAbsolute);
+    ui->TimerText->setInputMask("99:99:99");
     QObject::connect(ui->TimerStartButton, &QPushButton::clicked, this, &TimerView::timerButtonClicked);
 }
 
@@ -15,7 +16,7 @@ TimerView::~TimerView()
     delete ui;
 }
 
-QTextEdit *TimerView::getTimerLine()
+QLineEdit *TimerView::getTimerLine()
 {
     return ui->TimerText;
 }
@@ -27,7 +28,7 @@ QPushButton *TimerView::getTimerButton()
 
 void TimerView::timerButtonClicked()
 {
-    QString text = ui->TimerText->toPlainText();
+    QString text = ui->TimerText->text();
     emit receiveTimerText(text);
 }
 

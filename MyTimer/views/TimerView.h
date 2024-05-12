@@ -2,7 +2,7 @@
 #define TIMERVIEW_H_20240512
 
 #include <QDockWidget>
-#include <QTextEdit>
+#include <QLineEdit>
 #include <QPushButton>
 
 namespace Ui {
@@ -17,7 +17,7 @@ class TimerView : public QDockWidget
 public:
     explicit TimerView(QWidget *parent = nullptr);
     ~TimerView();
-    QTextEdit* getTimerLine();
+    QLineEdit* getTimerLine();
     QPushButton* getTimerButton();
 
 public slots:
