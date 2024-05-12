@@ -8,6 +8,7 @@ TimerView::TimerView(QWidget *parent)
     ui->setupUi(this);
     ui->TimerText->setAlignment(Qt::AlignmentFlag::AlignCenter | Qt::AlignmentFlag::AlignAbsolute);
     ui->TimerText->setInputMask("99:99:99");
+    ui->TimerText->setText("00:00:00");
     QObject::connect(ui->TimerStartButton, &QPushButton::clicked, this, &TimerView::timerButtonClicked);
 }
 
