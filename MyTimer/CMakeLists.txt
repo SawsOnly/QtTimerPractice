@@ -23,7 +23,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(MyTimer
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        TimerModel.h timermodel.cpp
+        TimerModel.h TimerModel.cpp
         TimerView.h TimerView.cpp timerview.ui
         Delegate.h Delegate.cpp
     )

@@ -2,7 +2,7 @@
 #include <QDebug>
 
 TimerModel::TimerModel() {
-
+    m_started = false;
 }
 
 int TimerModel::rowCount(const QModelIndex &parent) const
@@ -23,4 +23,6 @@ QVariant TimerModel::data(const QModelIndex &index, int role) const
 void TimerModel::startTimer(QString time)
 {
     qInfo() << qPrintable(time);
+    m_started = !m_started;
+    emit sendStartState(m_started);
 }

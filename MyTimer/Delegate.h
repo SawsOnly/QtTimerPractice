@@ -1,14 +1,13 @@
 #ifndef DELEGATE_H
 #define DELEGATE_H
 
-#include "TimerView.h"
-#include "TimerModel.h"
-
 #include <QDataWidgetMapper>
 
-class Delegate
+class TimerModel;
+class TimerView;
+class Delegate : QObject
 {
-
+    Q_OBJECT
 public:
     //Singleton Delegate should not be copyable
     Delegate(Delegate& other) = delete;

@@ -29,3 +29,13 @@ void TimerView::timerButtonClicked()
     QString text = ui->TimerText->toPlainText();
     emit receiveTimerText(text);
 }
+
+void TimerView::changeTimerButton(bool started)
+{
+    if(started)
+    {
+        ui->TimerStartButton->setText("Stop");
+        return;
+    }
+    ui->TimerStartButton->setText("Start");
+}

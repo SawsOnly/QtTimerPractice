@@ -6,6 +6,7 @@
 
 class TimerModel : public QAbstractTableModel
 {
+        Q_OBJECT
 public:
     TimerModel();
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -14,8 +15,13 @@ public:
 
 public slots:
     void startTimer(QString time);
+
+signals:
+    void sendStartState(bool state);
+
 private:
     QTime m_time;
+    bool m_started;
 };
 
 #endif // TIMERMODEL_H

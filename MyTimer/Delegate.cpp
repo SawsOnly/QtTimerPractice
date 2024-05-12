@@ -1,4 +1,6 @@
 #include "Delegate.h"
+#include "TimerView.h"
+#include "TimerModel.h"
 
 Delegate* Delegate::m_delegate = 0;
 Delegate::Delegate() {
@@ -19,5 +21,6 @@ void Delegate::addConnection(TimerModel *model, TimerView *view)
     m_mapper->setModel(model);
     m_mapper->addMapping(view->getTimerLine(), 0);
     QObject::connect(view, &TimerView::receiveTimerText, model, &TimerModel::startTimer);
+    QObject::connect(model, &TimerModel::sendStartState, view, &TimerView::changeTimerButton);
     return;
 }
