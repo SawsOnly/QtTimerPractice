@@ -6,6 +6,7 @@ TimerView::TimerView(QWidget *parent)
     , ui(new Ui::TimerView)
 {
     ui->setupUi(this);
+    QObject::connect(ui->TimerStartButton, &QPushButton::clicked, this, &TimerView::timerButtonClicked);
 }
 
 TimerView::~TimerView()
@@ -16,4 +17,15 @@ TimerView::~TimerView()
 QTextEdit *TimerView::getTimerLine()
 {
     return ui->TimerText;
+}
+
+QPushButton *TimerView::getTimerButton()
+{
+    return ui->TimerStartButton;
+}
+
+void TimerView::timerButtonClicked()
+{
+    QString text = ui->TimerText->toPlainText();
+    emit receiveTimerText(text);
 }

@@ -18,6 +18,6 @@ void Delegate::addConnection(TimerModel *model, TimerView *view)
 {
     m_mapper->setModel(model);
     m_mapper->addMapping(view->getTimerLine(), 0);
-    //QObject::connect(view,)
+    QObject::connect(view, &TimerView::receiveTimerText, model, &TimerModel::startTimer);
     return;
 }

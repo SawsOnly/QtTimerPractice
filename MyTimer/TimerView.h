@@ -3,8 +3,10 @@
 
 #include <QDockWidget>
 #include <QTextEdit>
+#include <QPushButton>
 
 namespace Ui {
+
 class TimerView;
 }
 
@@ -16,6 +18,13 @@ public:
     explicit TimerView(QWidget *parent = nullptr);
     ~TimerView();
     QTextEdit* getTimerLine();
+    QPushButton* getTimerButton();
+
+public slots:
+    void timerButtonClicked();
+
+signals:
+    void receiveTimerText(QString text);
 
 private:
     Ui::TimerView *ui;

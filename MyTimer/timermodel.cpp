@@ -1,4 +1,5 @@
 #include "TimerModel.h"
+#include <QDebug>
 
 TimerModel::TimerModel() {
 
@@ -17,4 +18,9 @@ int TimerModel::columnCount(const QModelIndex &parent) const
 QVariant TimerModel::data(const QModelIndex &index, int role) const
 {
     return QVariant();
+}
+
+void TimerModel::startTimer(QString time)
+{
+    qInfo() << qPrintable(time);
 }
