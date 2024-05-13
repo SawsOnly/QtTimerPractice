@@ -22,5 +22,6 @@ void Delegate::addConnection(TimerModel *model, TimerView *view)
     m_mapper->addMapping(view->getTimerLine(), 0);
     QObject::connect(view, &TimerView::receiveTimerText, model, &TimerModel::startTimer);
     QObject::connect(model, &TimerModel::sendStartState, view, &TimerView::changeTimerButton);
+    QObject::connect(model, &TimerModel::sendUpdateToView, view, &TimerView::updateTimer);
     return;
 }

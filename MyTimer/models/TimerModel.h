@@ -3,6 +3,7 @@
 
 #include <QAbstractTableModel>
 #include <QTime>
+#include <QTimer>
 
 class TimerModel : public QAbstractTableModel
 {
@@ -15,12 +16,15 @@ public:
 
 public slots:
     void startTimer(QString time);
+    void updateTime();
 
 signals:
     void sendStartState(bool state);
+    void sendUpdateToView(QString time);
 
 private:
     QTime m_time;
+    QTimer m_timer;
     bool m_started;
 };
 
